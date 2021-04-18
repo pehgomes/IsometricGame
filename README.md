@@ -1,6 +1,6 @@
-# 2D Isometric Tilemaps - Example Project
+# 2D Isometric Tilemaps - Imagem e Interação
 
-![IsoTilemaps_Temple.png](https://i.imgur.com/3psZE0c.png)
+![IsoTilemaps_Temple.png](https://i.imgur.com/VuhDWJc.png)
 
 
 **Description**
@@ -19,32 +19,3 @@ The project contains:
 - Several Example Biome Scenes already setup with Isometric Tilemaps, Decoration Prefabs Colliders, Witch Character and Pixel Perfect Camera.
 - An 'Empty' Biome Scene with everything setup for you to begin building levels!
 
-Basic Biome:
-![IsoTilemaps_Basic.png](https://i.imgur.com/ctE64dV.png)
-
-Plains Biome:
-![IsoTilemaps_Plains.png](https://i.imgur.com/bUsUWzq.png)
-
-Desert Biome:
-![IsoTilemaps_Desert.png](https://i.imgur.com/zALU0Ii.png)
-
-Frozen Cave Biome:
-![IsoTilemaps_FrozenCave.png](https://i.imgur.com/3S4RlK5.png)
-
-Frozen Mountain Biome:
-![IsoTilemaps_FrozenMountain.png](https://i.imgur.com/kMxDSYO.png)
-
-Temple Biome:
-![IsoTilemaps_Temple.png](https://i.imgur.com/3psZE0c.png)
-
-
-**Current Software Requirements**
-
-- Unity 2018.3.0f2
-- 2D Pixel Perfect Package: 1.0.1-preview
-- Arrow Keys/WASD to move the Witch Character
-
-
-**Contact**
-
-If you have any feedback or issues when using the project; please contact Andy by email: andyt[at]unity3d.com
