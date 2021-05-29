@@ -8,11 +8,9 @@ public class DialogManager : MonoBehaviour
 
     public DialogBox dialogBox;
     public HUD hud;
-    public Button buttonWardrobe;
-    public Button buttonPC;
-    public Button buttonBed;
+    public Transform player;
 
-    int lastClicked = -1;
+    string lastClicked = "";
 
     int timeout = 0;
 
@@ -22,9 +20,6 @@ public class DialogManager : MonoBehaviour
         dialogBox.confirmButton.onClick.AddListener(ClickConfirm);
         dialogBox.cancelButton.onClick.AddListener(ClickCancel);
 
-		buttonWardrobe.onClick.AddListener(ClickWardrobe);
-		buttonPC.onClick.AddListener(ClickPC);
-		buttonBed.onClick.AddListener(ClickBed);
     }
 
     void FixedUpdate(){
@@ -38,14 +33,8 @@ public class DialogManager : MonoBehaviour
 
     void ClickConfirm(){
         switch(lastClicked){
-            case 1:
+            case "laptop_SW":
                 hud.updateBars(0.01f, 0.05f, 0.00f, 0.05f, 0.00f);
-                break;
-            case 2:
-                hud.updateBars(0.01f, 0.00f, 0.05f, 0.00f, 0.05f);
-                break;
-            case 3:
-                hud.updateBars(0.00f, -0.03f, -0.03f, -0.03f, -0.03f);
                 break;
         }
 
@@ -58,21 +47,13 @@ public class DialogManager : MonoBehaviour
         dialogBox.anim.SetBool("IsOpen", false);
     }
 
-    void ClickWardrobe(){
-        lastClicked = 1;
+    public void Click(string name, Vector3 position){
+        lastClicked = name;
 
-        dialogBox.dialogText.text = "É um armário.";
-        dialogBox.confirmButton.GetComponentInChildren<Text>().text = "Abrir";
-        dialogBox.cancelButton.GetComponentInChildren<Text>().text = "Cancelar";
+        dialogBox.dialogText.text = "É um " +name +" na posição " +position.ToString() +".";
+        dialogBox.dialogText.text += "\nPlayer está na posição " +player.position.ToString() +".";
+        dialogBox.dialogText.text += "\nPlayer está a uma distância de " +Vector3.Distance( player.position, position) +".";
 
-        dialogBox.anim.SetBool("IsOpen", true);
-        timeout = 300;
-    }
-
-    void ClickPC(){
-        lastClicked = 2;
-
-        dialogBox.dialogText.text = "É um computador.";
         dialogBox.confirmButton.GetComponentInChildren<Text>().text = "Usar";
         dialogBox.cancelButton.GetComponentInChildren<Text>().text = "Cancelar";
 
@@ -80,14 +61,4 @@ public class DialogManager : MonoBehaviour
         timeout = 300;
     }
 
-    void ClickBed(){
-        lastClicked = 3;
-
-        dialogBox.dialogText.text = "É uma cama.";
-        dialogBox.confirmButton.GetComponentInChildren<Text>().text = "Dormir";
-        dialogBox.cancelButton.GetComponentInChildren<Text>().text = "Cancelar";
-
-        dialogBox.anim.SetBool("IsOpen", true);
-        timeout = 300;
-    }
 }
