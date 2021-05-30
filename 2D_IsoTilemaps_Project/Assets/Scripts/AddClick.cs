@@ -21,7 +21,7 @@ public class AddClick : MonoBehaviour
 
     void OnMouseDown()
     {
-	this.dialogManager.Click(this.gameObject.name, this.gameObject.transform.position);
+	this.dialogManager.Click(this.gameObject);
     }
 
 }

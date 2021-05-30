@@ -23,12 +23,12 @@ public class DialogManager : MonoBehaviour
     }
 
     void FixedUpdate(){
-        if(timeout > 0){
+        /*if(timeout > 0){
             timeout--;
             if(timeout == 0){
                 dialogBox.anim.SetBool("IsOpen", false);
             }
-        }
+        }*/
     }
 
     void ClickConfirm(){
@@ -47,12 +47,13 @@ public class DialogManager : MonoBehaviour
         dialogBox.anim.SetBool("IsOpen", false);
     }
 
-    public void Click(string name, Vector3 position){
-        lastClicked = name;
+    public void Click(GameObject obj){
+	
+	lastClicked = obj.name;
 
-        dialogBox.dialogText.text = "É um " +name +" na posição " +position.ToString() +".";
+        dialogBox.dialogText.text = "É um " +obj.name +" na posição " +obj.transform.position.ToString() +".";
         dialogBox.dialogText.text += "\nPlayer está na posição " +player.position.ToString() +".";
-        dialogBox.dialogText.text += "\nPlayer está a uma distância de " +Vector3.Distance( player.position, position) +".";
+        dialogBox.dialogText.text += "\nPlayer está a uma distância de " +Vector3.Distance( player.position, obj.transform.position) +".";
 
         dialogBox.confirmButton.GetComponentInChildren<Text>().text = "Usar";
         dialogBox.cancelButton.GetComponentInChildren<Text>().text = "Cancelar";
