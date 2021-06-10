@@ -8,11 +8,15 @@ public class DialogManager : MonoBehaviour
 
     public DialogBox dialogBox;
     public HUD hud;
+    public GameObject hudVisibility;
     public Transform player;
+    public IsometricPlayerMovementController playerMovement;
+    public SpriteRenderer fadein;
 
     string lastClicked = "";
 
-    int timeout = 0;
+    float maxTimeout = 200;
+    float timeout = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -24,12 +28,22 @@ public class DialogManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        /*if(timeout > 0){
+        if(timeout > 0){
+	    playerMovement.movementSpeed = 0;
             timeout--;
-            if(timeout == 0){
-                dialogBox.anim.SetBool("IsOpen", false);
-            }
-        }*/
+	    Color tmp = fadein.color;
+	    if(timeout < 100)
+	    	tmp.a = timeout/100;
+	    else
+	    	tmp.a = (100 -(timeout -100))/100;
+            fadein.color = tmp;
+
+	    Debug.Log(tmp.a);
+        }
+	else{	   
+	    playerMovement.movementSpeed = 3;
+	    hudVisibility.SetActive(true);
+	}
     }
 
     void ClickConfirm()
@@ -37,6 +51,8 @@ public class DialogManager : MonoBehaviour
         switch (lastClicked)
         {
             case "bedSingle_SW":
+	    	hudVisibility.SetActive(false);
+		timeout = maxTimeout;
                 hud.updateBars(0.04f, -0.15f, -0.15f, -0.15f, -0.15f);
                 break;
             case "shower_SE":
@@ -59,19 +75,17 @@ public class DialogManager : MonoBehaviour
                 break;
         }
 
-        timeout = 0;
         dialogBox.anim.SetBool("IsOpen", false);
     }
 
     void ClickCancel()
     {
-        timeout = 0;
         dialogBox.anim.SetBool("IsOpen", false);
     }
 
     public void Click(GameObject obj)
     {
-
+	if(timeout == 0){
         lastClicked = obj.name;
 
         dialogBox.dialogText.text = "É um " + obj.name + " na posição " + obj.transform.position.ToString() + ".";
@@ -83,7 +97,7 @@ public class DialogManager : MonoBehaviour
         
 
         dialogBox.anim.SetBool("IsOpen", true);
-        timeout = 300;
+	}
     }
 
 }
