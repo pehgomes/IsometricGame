@@ -577,6 +577,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &267575838 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1753145920343698192, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+    type: 3}
+  m_PrefabInstance: {fileID: 672873144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfc156dd66b59c4cbfd0076b2587512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &289167307
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +743,7 @@ GameObject:
   - component: {fileID: 411225468}
   - component: {fileID: 411225469}
   - component: {fileID: 411225470}
+  - component: {fileID: 411225471}
   m_Layer: 0
   m_Name: kitchenFridge_SE
   m_TagString: Untagged
@@ -814,6 +827,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fcabbe565ae144280ae687340104c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &411225471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411225467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583b978d318d4bc45a1efa2a47f86580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogManager: {fileID: 672873146}
 --- !u!1 &415188326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,6 +1128,18 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 579170498}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &509207483 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1753145921606243031, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+    type: 3}
+  m_PrefabInstance: {fileID: 672873144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfc156dd66b59c4cbfd0076b2587512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &510928227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,6 +1873,7 @@ GameObject:
   - component: {fileID: 580682675}
   - component: {fileID: 580682676}
   - component: {fileID: 580682677}
+  - component: {fileID: 580682678}
   m_Layer: 0
   m_Name: televisionModern_NW
   m_TagString: Untagged
@@ -1918,6 +1957,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fcabbe565ae144280ae687340104c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &580682678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580682674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583b978d318d4bc45a1efa2a47f86580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogManager: {fileID: 672873146}
 --- !u!1 &586561284
 GameObject:
   m_ObjectHideFlags: 0
@@ -2952,6 +3004,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1753145920261811769, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: m_Text
+      value: Autocuidados
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753145920261811769, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753145920261811769, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753145920306928507, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: m_Text
+      value: "Motiva\xE7\xE3o"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753145920306928507, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753145920306928507, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1753145920307796021, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
         type: 3}
       propertyPath: m_UiScaleMode
@@ -3149,10 +3231,85 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 1753145921489232587, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: m_Text
+      value: "Divers\xE3o"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753145921489232587, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753145921489232587, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753145921733891997, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: m_Text
+      value: Energia
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753145921733891997, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753145921733891997, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753145921733891997, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753145921781388928, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: energia
+      value: 
+      objectReference: {fileID: 1981935646}
+    - target: {fileID: 1753145921781388928, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: diversao
+      value: 
+      objectReference: {fileID: 723494652}
+    - target: {fileID: 1753145921781388928, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: motivacao
+      value: 
+      objectReference: {fileID: 267575838}
+    - target: {fileID: 1753145921781388928, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: autocuidados
+      value: 
+      objectReference: {fileID: 757503980}
+    - target: {fileID: 1753145921781388928, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: socializacao
+      value: 
+      objectReference: {fileID: 509207483}
     - target: {fileID: 1753145921781388957, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -185
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753145922084972516, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: m_Text
+      value: "Socializa\xE7\xE3o"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753145922084972516, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753145922084972516, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1753145922148153552, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
         type: 3}
@@ -3182,6 +3339,30 @@ MonoBehaviour:
   dialogBox: {fileID: 225604687}
   hud: {fileID: 1442036219}
   player: {fileID: 1009234056}
+--- !u!114 &723494652 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1753145921372215872, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+    type: 3}
+  m_PrefabInstance: {fileID: 672873144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfc156dd66b59c4cbfd0076b2587512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &757503980 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1753145921642078813, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+    type: 3}
+  m_PrefabInstance: {fileID: 672873144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfc156dd66b59c4cbfd0076b2587512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &766874357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3368,6 +3549,7 @@ GameObject:
   - component: {fileID: 916798734}
   - component: {fileID: 916798736}
   - component: {fileID: 916798735}
+  - component: {fileID: 916798737}
   m_Layer: 0
   m_Name: shower_SE
   m_TagString: Untagged
@@ -3451,6 +3633,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &916798737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916798733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583b978d318d4bc45a1efa2a47f86580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogManager: {fileID: 672873146}
 --- !u!1 &921132505
 GameObject:
   m_ObjectHideFlags: 0
@@ -4459,6 +4654,7 @@ GameObject:
   - component: {fileID: 1531676087}
   - component: {fileID: 1531676088}
   - component: {fileID: 1531676089}
+  - component: {fileID: 1531676090}
   m_Layer: 0
   m_Name: bedSingle_SW
   m_TagString: Untagged
@@ -4542,6 +4738,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fcabbe565ae144280ae687340104c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1531676090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531676086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583b978d318d4bc45a1efa2a47f86580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogManager: {fileID: 672873146}
 --- !u!1 &1578807349
 GameObject:
   m_ObjectHideFlags: 0
@@ -4902,6 +5111,7 @@ GameObject:
   - component: {fileID: 1704925753}
   - component: {fileID: 1704925754}
   - component: {fileID: 1704925755}
+  - component: {fileID: 1704925756}
   m_Layer: 0
   m_Name: kitchenStove_NW
   m_TagString: Untagged
@@ -4985,6 +5195,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fcabbe565ae144280ae687340104c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1704925756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704925752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583b978d318d4bc45a1efa2a47f86580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogManager: {fileID: 672873146}
 --- !u!1 &1728240443
 GameObject:
   m_ObjectHideFlags: 0
@@ -4996,6 +5219,7 @@ GameObject:
   - component: {fileID: 1728240444}
   - component: {fileID: 1728240445}
   - component: {fileID: 1728240446}
+  - component: {fileID: 1728240447}
   m_Layer: 0
   m_Name: books_SE
   m_TagString: Untagged
@@ -5079,6 +5303,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fcabbe565ae144280ae687340104c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1728240447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728240443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583b978d318d4bc45a1efa2a47f86580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogManager: {fileID: 672873146}
 --- !u!1 &1736232171
 GameObject:
   m_ObjectHideFlags: 0
@@ -6346,6 +6583,7 @@ GameObject:
   - component: {fileID: 1956400260}
   - component: {fileID: 1956400262}
   - component: {fileID: 1956400261}
+  - component: {fileID: 1956400263}
   m_Layer: 0
   m_Name: laptop_SW
   m_TagString: Untagged
@@ -6442,6 +6680,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fcabbe565ae144280ae687340104c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1956400263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956400258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583b978d318d4bc45a1efa2a47f86580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogManager: {fileID: 0}
 --- !u!1 &1970216323
 GameObject:
   m_ObjectHideFlags: 0
@@ -6534,6 +6785,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54fcabbe565ae144280ae687340104c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1981935646 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1753145921855701545, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
+    type: 3}
+  m_PrefabInstance: {fileID: 672873144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfc156dd66b59c4cbfd0076b2587512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2059598746

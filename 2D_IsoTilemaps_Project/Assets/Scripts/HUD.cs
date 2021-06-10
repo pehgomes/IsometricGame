@@ -5,16 +5,16 @@ using UnityEngine;
 public class HUD : MonoBehaviour
 {
 
-    public GenericBar bar1;
-    public GenericBar bar2;
-    public GenericBar bar3;
-    public GenericBar bar4;
-    public GenericBar bar5;
+    public GenericBar energia;
+    public GenericBar motivacao;
+    public GenericBar diversao;
+    public GenericBar socializacao;
+    public GenericBar autocuidados;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.updateBars(0.2f, 0.15f, 0.15f, 0.1f, 0.2f);
     }
 
     // Update is called once per frame
@@ -24,10 +24,10 @@ public class HUD : MonoBehaviour
     }
 
     public void updateBars(float b1, float b2, float b3, float b4, float b5){
-        bar1.IncrementValue(b1);
-        bar2.IncrementValue(b2);
-        bar3.IncrementValue(b3);
-        bar4.IncrementValue(b4);
-        bar5.IncrementValue(b5);
+        energia.IncrementValue(b1);
+        motivacao.IncrementValue(b2);
+        diversao.IncrementValue(b3);
+        socializacao.IncrementValue(b4);
+        autocuidados.IncrementValue(b5);
     }
 }
