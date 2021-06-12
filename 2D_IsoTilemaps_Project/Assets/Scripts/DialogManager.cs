@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogManager : MonoBehaviour
 {
@@ -61,17 +62,27 @@ public class DialogManager : MonoBehaviour
     void CheckObjectives()
     {
 	float[] values = hud.getAllBars();
+	if(values[0] == 0f && values[1] < 0.5f && values[2] < 0.5f && values[3] < 0.5f && values[4] < 0.5f){
+            SceneManager.LoadScene(2);
+	}
+	else if(values[1] > 0.35f && values[4] > 0.35f && objectiveBasic == false)
+	{
+	    objectiveBasic = true;
+	    dialogBox.dialogText.text = "Objetivo Básico!";
 
+	    dialogBox.button1.gameObject.SetActive(false);
+	    dialogBox.button2.gameObject.SetActive(false);
+	    dialogBox.button3.gameObject.SetActive(false);
+
+	    dialogBox.cancelButton.GetComponentInChildren<Text>().text = "Confirmar";
+	
+            dialogBox.anim.SetBool("IsOpen", true);
+	
+	}
 	
     }
 
     void Click1()
-    {
-	CheckObjectives();
-        dialogBox.anim.SetBool("IsOpen", false);
-    }
-
-    void Click2()
     {
         switch (lastClicked)
         {
@@ -99,14 +110,46 @@ public class DialogManager : MonoBehaviour
                 break;
         }
 	
-	CheckObjectives();
         dialogBox.anim.SetBool("IsOpen", false);
+	CheckObjectives();
+    }
+
+    void Click2()
+    {
+        switch (lastClicked)
+        {
+            case "bedSingle_SW":
+		fade();
+                hud.updateBars(0.04f, -0.15f, -0.15f, -0.15f, -0.15f);
+                break;
+            case "shower_SE":
+                hud.updateBars(0.05f, 0.03f, 0.00f, 0.00f, 0.05f);
+                break;
+            case "laptop_SW":
+                hud.updateBars(-1f, -1f, -1f, -1f, -1f);
+                break;
+            case "books_SE":
+                hud.updateBars(-0.08f, 0.20f, 0.00f, 0.00f, 0.00f);
+                break;
+            case "kitchenFridge_SE":
+                hud.updateBars(0.05f, -0.12f, -0.04f, 0.00f, 0.03f);
+                break;
+            case "televisionModern_NW":
+                hud.updateBars(-0.05f, -0.10f, 0.30f, -0.05f, 0.00f);
+                break;
+            case "kitchenStove_NW":
+                hud.updateBars(0.01f, 0.05f, 0.00f, 0.05f, 0.00f);
+                break;
+        }
+
+        dialogBox.anim.SetBool("IsOpen", false);
+	CheckObjectives();
     }
 
     void Click3()
     {
-	CheckObjectives();
         dialogBox.anim.SetBool("IsOpen", false);
+	CheckObjectives();
     }
 
     void ClickCancel()
@@ -114,10 +157,12 @@ public class DialogManager : MonoBehaviour
         dialogBox.anim.SetBool("IsOpen", false);
     }
 
-    public void Click(GameObject obj, string text1, string text2, string text3)
+    public void Click(GameObject obj, string[] b1, string[] b2, string[] b3)
     {
 	
 	float distance = Vector3.Distance(player.position, obj.transform.position);
+	
+	dialogBox.cancelButton.GetComponentInChildren<Text>().text = "Cancelar";
 
         if(timeout == 0 && distance < 1.5f){
         lastClicked = obj.name;
@@ -125,35 +170,38 @@ public class DialogManager : MonoBehaviour
         dialogBox.dialogText.text = "É um " + obj.name + " na posição " + obj.transform.position.ToString() + ".";
         dialogBox.dialogText.text += "\nPlayer está na posição " + player.position.ToString() + ".";
         dialogBox.dialogText.text += "\nPlayer está a uma distância de " + distance + ".";
-
-	if(text1 == "")
-	{
-	    dialogBox.button1.gameObject.SetActive(false);
-	}
-	else
-	{
+		
+	dialogBox.button1.gameObject.SetActive(false);
+	if(b1[0] != "" &&
+	((b1[1] == "") ||
+	(b1[1] == "Basic" && objectiveBasic) || 
+	(b1[1] == "Medium" && objectiveMedium) ||
+	(b1[1] == "Expert" && objectiveExpert)))
+	{	
 	    dialogBox.button1.gameObject.SetActive(true);
-	    dialogBox.button1.GetComponentInChildren<Text>().text = text1;
+	    dialogBox.button1.GetComponentInChildren<Text>().text = b1[0];
 	}
 
-	if(text2 == "")
-	{
-	    dialogBox.button2.gameObject.SetActive(false);
-	}
-	else
-	{
+	dialogBox.button2.gameObject.SetActive(false);
+	if(b2[0] != "" &&
+	((b2[1] == "") ||
+	(b2[1] == "Basic" && objectiveBasic) || 
+	(b2[1] == "Medium" && objectiveMedium) ||
+	(b2[1] == "Expert" && objectiveExpert)))
+	{	
 	    dialogBox.button2.gameObject.SetActive(true);
-	    dialogBox.button2.GetComponentInChildren<Text>().text = text2;
+	    dialogBox.button2.GetComponentInChildren<Text>().text = b2[0];
 	}
 
-	if(text3 == "")
-	{
-	    dialogBox.button3.gameObject.SetActive(false);
-	}
-	else
-	{
+	dialogBox.button3.gameObject.SetActive(false);
+	if(b3[0] != "" &&
+	((b3[1] == "") ||
+	(b3[1] == "Basic" && objectiveBasic) || 
+	(b3[1] == "Medium" && objectiveMedium) ||
+	(b3[1] == "Expert" && objectiveExpert)))
+	{	
 	    dialogBox.button3.gameObject.SetActive(true);
-	    dialogBox.button3.GetComponentInChildren<Text>().text = text3;
+	    dialogBox.button3.GetComponentInChildren<Text>().text = b3[0];
 	}
         
 

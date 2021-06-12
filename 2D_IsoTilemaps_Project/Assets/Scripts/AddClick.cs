@@ -10,8 +10,11 @@ public class AddClick : MonoBehaviour
     private UIHoverListener uiListener;
 
     public string button1Text = "";
+    public string button1Req = "";
     public string button2Text = "";
-    public string button3Text = "";    
+    public string button2Req = "";
+    public string button3Text = ""; 
+    public string button3Req = "";   
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +37,7 @@ public class AddClick : MonoBehaviour
         }
 	else
 	{
-	   this.dialogManager.Click(this.gameObject, button1Text, button2Text, button3Text);
+	   this.dialogManager.Click(this.gameObject, new[]{button1Text, button1Req}, new[]{button2Text, button2Req}, new[]{button3Text, button3Req});
 	}
     }
 
