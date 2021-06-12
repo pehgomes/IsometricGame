@@ -23,11 +23,18 @@ public class HUD : MonoBehaviour
         
     }
 
-    public void updateBars(float b1, float b2, float b3, float b4, float b5){
+    public void updateBars(float b1, float b2, float b3, float b4, float b5)
+    {
         energia.IncrementValue(b1);
         motivacao.IncrementValue(b2);
         diversao.IncrementValue(b3);
         socializacao.IncrementValue(b4);
         autocuidados.IncrementValue(b5);
     }
+
+    public float[] getAllBars()
+    {
+	return new[]{energia.slider.value, motivacao.slider.value, diversao.slider.value, socializacao.slider.value, autocuidados.slider.value};
+    }
+
 }

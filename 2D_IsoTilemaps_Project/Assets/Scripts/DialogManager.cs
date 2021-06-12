@@ -13,6 +13,10 @@ public class DialogManager : MonoBehaviour
     public IsometricPlayerMovementController playerMovement;
     public SpriteRenderer fadein;
 
+    public bool objectiveBasic = false;
+    public bool objectiveMedium = false;
+    public bool objectiveExpert = false;
+
     string lastClicked = "";
 
     float maxTimeout = 200;
@@ -21,7 +25,9 @@ public class DialogManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dialogBox.confirmButton.onClick.AddListener(ClickConfirm);
+        dialogBox.button1.onClick.AddListener(Click1);
+        dialogBox.button2.onClick.AddListener(Click2);
+        dialogBox.button3.onClick.AddListener(Click3);
         dialogBox.cancelButton.onClick.AddListener(ClickCancel);
 
     }
@@ -38,7 +44,7 @@ public class DialogManager : MonoBehaviour
 	    	tmp.a = (100 -(timeout -100))/100;
             fadein.color = tmp;
 
-	    Debug.Log(tmp.a);
+	    //Debug.Log(tmp.a);
         }
 	else{	   
 	    playerMovement.movementSpeed = 3;
@@ -46,13 +52,31 @@ public class DialogManager : MonoBehaviour
 	}
     }
 
-    void ClickConfirm()
+    void fade()
+    {
+	hudVisibility.SetActive(false);
+	timeout = maxTimeout;
+    }
+
+    void CheckObjectives()
+    {
+	float[] values = hud.getAllBars();
+
+	
+    }
+
+    void Click1()
+    {
+	CheckObjectives();
+        dialogBox.anim.SetBool("IsOpen", false);
+    }
+
+    void Click2()
     {
         switch (lastClicked)
         {
             case "bedSingle_SW":
-	    	hudVisibility.SetActive(false);
-		timeout = maxTimeout;
+		fade();
                 hud.updateBars(0.04f, -0.15f, -0.15f, -0.15f, -0.15f);
                 break;
             case "shower_SE":
@@ -74,7 +98,14 @@ public class DialogManager : MonoBehaviour
                 hud.updateBars(0.01f, 0.05f, 0.00f, 0.05f, 0.00f);
                 break;
         }
+	
+	CheckObjectives();
+        dialogBox.anim.SetBool("IsOpen", false);
+    }
 
+    void Click3()
+    {
+	CheckObjectives();
         dialogBox.anim.SetBool("IsOpen", false);
     }
 
@@ -83,21 +114,61 @@ public class DialogManager : MonoBehaviour
         dialogBox.anim.SetBool("IsOpen", false);
     }
 
-    public void Click(GameObject obj)
+    public void Click(GameObject obj, string text1, string text2, string text3)
     {
-	if(timeout == 0){
+	
+	float distance = Vector3.Distance(player.position, obj.transform.position);
+
+        if(timeout == 0 && distance < 1.5f){
         lastClicked = obj.name;
 
         dialogBox.dialogText.text = "É um " + obj.name + " na posição " + obj.transform.position.ToString() + ".";
         dialogBox.dialogText.text += "\nPlayer está na posição " + player.position.ToString() + ".";
-        dialogBox.dialogText.text += "\nPlayer está a uma distância de " + Vector3.Distance(player.position, obj.transform.position) + ".";
+        dialogBox.dialogText.text += "\nPlayer está a uma distância de " + distance + ".";
 
-        dialogBox.confirmButton.GetComponentInChildren<Text>().text = "Usar";
-        dialogBox.cancelButton.GetComponentInChildren<Text>().text = "Cancelar";
+	if(text1 == "")
+	{
+	    dialogBox.button1.gameObject.SetActive(false);
+	}
+	else
+	{
+	    dialogBox.button1.gameObject.SetActive(true);
+	    dialogBox.button1.GetComponentInChildren<Text>().text = text1;
+	}
+
+	if(text2 == "")
+	{
+	    dialogBox.button2.gameObject.SetActive(false);
+	}
+	else
+	{
+	    dialogBox.button2.gameObject.SetActive(true);
+	    dialogBox.button2.GetComponentInChildren<Text>().text = text2;
+	}
+
+	if(text3 == "")
+	{
+	    dialogBox.button3.gameObject.SetActive(false);
+	}
+	else
+	{
+	    dialogBox.button3.gameObject.SetActive(true);
+	    dialogBox.button3.GetComponentInChildren<Text>().text = text3;
+	}
         
 
-        dialogBox.anim.SetBool("IsOpen", true);
+
 	}
+	else
+	{
+	    dialogBox.dialogText.text = "Muito longe!";
+	    dialogBox.button1.gameObject.SetActive(false);
+	    dialogBox.button2.gameObject.SetActive(false);
+	    dialogBox.button3.gameObject.SetActive(false);
+	}
+
+        dialogBox.anim.SetBool("IsOpen", true);
+
     }
 
 }

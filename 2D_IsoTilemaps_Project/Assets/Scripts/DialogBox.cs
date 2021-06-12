@@ -8,9 +8,10 @@ public class DialogBox : MonoBehaviour
 
     public Animator anim;
     public Text dialogText;
-    public Button confirmButton;
+    public Button button1;
+    public Button button2;
+    public Button button3;
     public Button cancelButton;
-
 
     // Start is called before the first frame update
     void Start()
