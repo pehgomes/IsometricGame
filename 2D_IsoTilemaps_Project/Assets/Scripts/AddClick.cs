@@ -9,6 +9,11 @@ public class AddClick : MonoBehaviour
 	
     private UIHoverListener uiListener;
 
+    public string defaultMessage = "";
+    public string basicMessage = "";
+    public string mediumMessage = "";
+    public string expertMessage = "";
+
     public string button1Text = "";
     public string button1Req = "";
     public string button2Text = "";
@@ -37,7 +42,7 @@ public class AddClick : MonoBehaviour
         }
 	else
 	{
-	   this.dialogManager.Click(this.gameObject, new[]{button1Text, button1Req}, new[]{button2Text, button2Req}, new[]{button3Text, button3Req});
+	   this.dialogManager.Click(this.gameObject, new[]{button1Text, button1Req}, new[]{button2Text, button2Req}, new[]{button3Text, button3Req}, new[]{defaultMessage, basicMessage, mediumMessage, expertMessage});
 	}
     }
 

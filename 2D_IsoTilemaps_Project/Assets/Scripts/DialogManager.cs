@@ -157,66 +157,80 @@ public class DialogManager : MonoBehaviour
         dialogBox.anim.SetBool("IsOpen", false);
     }
 
-    public void Click(GameObject obj, string[] b1, string[] b2, string[] b3)
+    public void Click(GameObject obj, string[] b1, string[] b2, string[] b3, string[] messages)
     {
 	
 	float distance = Vector3.Distance(player.position, obj.transform.position);
 	
 	dialogBox.cancelButton.GetComponentInChildren<Text>().text = "Cancelar";
 
-        if(timeout == 0 && distance < 1.5f){
-        lastClicked = obj.name;
-
-        dialogBox.dialogText.text = "É um " + obj.name + " na posição " + obj.transform.position.ToString() + ".";
-        dialogBox.dialogText.text += "\nPlayer está na posição " + player.position.ToString() + ".";
-        dialogBox.dialogText.text += "\nPlayer está a uma distância de " + distance + ".";
-		
-	dialogBox.button1.gameObject.SetActive(false);
-	if(b1[0] != "" &&
-	((b1[1] == "") ||
-	(b1[1] == "Basic" && objectiveBasic) || 
-	(b1[1] == "Medium" && objectiveMedium) ||
-	(b1[1] == "Expert" && objectiveExpert)))
-	{	
-	    dialogBox.button1.gameObject.SetActive(true);
-	    dialogBox.button1.GetComponentInChildren<Text>().text = b1[0];
-	}
-
-	dialogBox.button2.gameObject.SetActive(false);
-	if(b2[0] != "" &&
-	((b2[1] == "") ||
-	(b2[1] == "Basic" && objectiveBasic) || 
-	(b2[1] == "Medium" && objectiveMedium) ||
-	(b2[1] == "Expert" && objectiveExpert)))
-	{	
-	    dialogBox.button2.gameObject.SetActive(true);
-	    dialogBox.button2.GetComponentInChildren<Text>().text = b2[0];
-	}
-
-	dialogBox.button3.gameObject.SetActive(false);
-	if(b3[0] != "" &&
-	((b3[1] == "") ||
-	(b3[1] == "Basic" && objectiveBasic) || 
-	(b3[1] == "Medium" && objectiveMedium) ||
-	(b3[1] == "Expert" && objectiveExpert)))
-	{	
-	    dialogBox.button3.gameObject.SetActive(true);
-	    dialogBox.button3.GetComponentInChildren<Text>().text = b3[0];
-	}
-        
-
-
-	}
-	else
+        if(timeout == 0)
 	{
-	    dialogBox.dialogText.text = "Muito longe!";
-	    dialogBox.button1.gameObject.SetActive(false);
-	    dialogBox.button2.gameObject.SetActive(false);
-	    dialogBox.button3.gameObject.SetActive(false);
-	}
+	    if(distance < 1.5)
+	    {
+                lastClicked = obj.name;
+
+                //dialogBox.dialogText.text = "É um " + obj.name + " na posição " + obj.transform.position.ToString() + ".";
+                //dialogBox.dialogText.text += "\nPlayer está na posição " + player.position.ToString() + ".";
+                //dialogBox.dialogText.text += "\nPlayer está a uma distância de " + distance + ".";
+		
+		dialogBox.dialogText.text = messages[0];
+		if(objectiveBasic && messages[1] != "")
+		    dialogBox.dialogText.text = messages[1];
+		if(objectiveMedium && messages[2] != "")
+		    dialogBox.dialogText.text = messages[2];
+		if(objectiveExpert && messages[3] != "")
+		    dialogBox.dialogText.text = messages[3];
+
+	        dialogBox.button1.gameObject.SetActive(false);
+	        if(b1[0] != "" &&
+	        ((b1[1] == "") ||
+	        (b1[1] == "Basic" && objectiveBasic) || 
+	        (b1[1] == "Medium" && objectiveMedium) ||
+	        (b1[1] == "Expert" && objectiveExpert)))
+	        {	
+	            dialogBox.button1.gameObject.SetActive(true);
+	            dialogBox.button1.GetComponentInChildren<Text>().text = b1[0];
+	        }
+
+	        dialogBox.button2.gameObject.SetActive(false);
+	        if(b2[0] != "" &&
+	        ((b2[1] == "") ||
+	        (b2[1] == "Basic" && objectiveBasic) || 
+	        (b2[1] == "Medium" && objectiveMedium) ||
+	        (b2[1] == "Expert" && objectiveExpert)))
+	        {	
+	            dialogBox.button2.gameObject.SetActive(true);
+	            dialogBox.button2.GetComponentInChildren<Text>().text = b2[0];
+	        }
+
+	        dialogBox.button3.gameObject.SetActive(false);
+	        if(b3[0] != "" &&
+	        ((b3[1] == "") ||
+	        (b3[1] == "Basic" && objectiveBasic) || 
+	        (b3[1] == "Medium" && objectiveMedium) ||
+	        (b3[1] == "Expert" && objectiveExpert)))
+	        {	
+	            dialogBox.button3.gameObject.SetActive(true);
+	            dialogBox.button3.GetComponentInChildren<Text>().text = b3[0];
+	        }
+        
+	    }
+	    else
+	    {
+	        dialogBox.dialogText.text = "Muito longe!";
+	        dialogBox.button1.gameObject.SetActive(false);
+	        dialogBox.button2.gameObject.SetActive(false);
+	        dialogBox.button3.gameObject.SetActive(false);
+	        dialogBox.cancelButton.GetComponentInChildren<Text>().text = "Ok";
+	    }
 
         dialogBox.anim.SetBool("IsOpen", true);
 
+	}
+
     }
+
+        
 
 }
