@@ -268,7 +268,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319720608}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!212 &63485526
 SpriteRenderer:
@@ -506,7 +506,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319720608}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!212 &118905968
 SpriteRenderer:
@@ -690,13 +690,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188173059}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 3.066691, y: -0.499809, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalRotation: {x: 0.27059805, y: -0.27059805, z: 0.6532815, w: 0.6532815}
+  m_LocalPosition: {x: 3.141, y: -0.499809, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 209101978}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 90}
 --- !u!114 &188173061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,8 +710,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 672873146}
-  defaultMessage: 
-  basicMessage: 
+  defaultMessage: "Telefone, criado por Alexander Graham Bell, brit\xE2nico, fundador
+    da AT & T. Infelizmente n\xE3o gosto de liga\xE7\xF5es, perd\xE3o sr. Bell"
+  basicMessage: "Me sinto muito sozinho. E se eu me interessar por algu\xE9m? Ser\xE1
+    se ligo pra minha fam\xEDlia?"
   mediumMessage: 
   expertMessage: 
   button1Text: "Ligar pra fam\xEDlia"
@@ -890,6 +892,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 415188327}
   - {fileID: 2121402716}
   - {fileID: 1531676087}
   - {fileID: 411225468}
@@ -1062,7 +1065,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319720608}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &248687695
 MonoBehaviour:
@@ -1285,7 +1288,6 @@ Transform:
   - {fileID: 537433963}
   - {fileID: 784280208}
   - {fileID: 1862333266}
-  - {fileID: 415188327}
   - {fileID: 457904587}
   - {fileID: 118905967}
   - {fileID: 481707952}
@@ -1340,7 +1342,7 @@ Transform:
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children: []
   m_Father: {fileID: 209101978}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!212 &411225469
 SpriteRenderer:
@@ -1417,7 +1419,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 672873146}
-  defaultMessage: 
+  defaultMessage: "Geladeiras s\xE3o espetaculares, eu venho at\xE9 ela, abro-a e
+    pego comida! Como n\xE3o am\xE1-las! Agora \xE9 hora do importante, o que devo
+    comer?"
   basicMessage: 
   mediumMessage: 
   expertMessage: 
@@ -1453,12 +1457,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415188326}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
   m_LocalPosition: {x: -0.729, y: 0.999, z: 0.101}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_Children: []
-  m_Father: {fileID: 319720608}
-  m_RootOrder: 4
+  m_Father: {fileID: 209101978}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!212 &415188328
 SpriteRenderer:
@@ -1535,7 +1539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 415188328}
-  newSprite: {fileID: 21300000, guid: 8efe8b08e598e7343892ab57a3f4b691, type: 3}
+  newSprite: {fileID: 21300000, guid: 0e3ecb2b2f59f5e489b0ee5136e3f833, type: 3}
 --- !u!1 &457904586
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,7 +1570,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319720608}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!212 &457904588
 SpriteRenderer:
@@ -1660,7 +1664,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319720608}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!212 &481707953
 SpriteRenderer:
@@ -1850,7 +1854,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 672873146}
-  defaultMessage: 
+  defaultMessage: "Minha m\xE3e me deu estes livros, que ela acha que eu sou? George
+    R.R. Lucas? Haruki Tolkien? Bem, n\xE3o sou, mas acho que podem ser \xFAteis
+    as vezes, quem sabe o que os boomers que os escreveram n\xE3o esconderam ai dentro!"
   basicMessage: 
   mediumMessage: 
   expertMessage: 
@@ -1886,7 +1892,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537433962}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 2.83, y: -0.54, z: -0.05}
+  m_LocalPosition: {x: 2.83, y: -0.54, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319720608}
@@ -1996,7 +2002,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319720608}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &549380521
 MonoBehaviour:
@@ -2297,7 +2303,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319720608}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!212 &567848413
 SpriteRenderer:
@@ -2531,7 +2537,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 209101978}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!212 &580682676
 SpriteRenderer:
@@ -2608,9 +2614,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 672873146}
-  defaultMessage: 
+  defaultMessage: "Televis\xE3o, assistir WestBrooklyn, estrelada por Eren Stark
+    e Arya Ackermann, exclusividade do Netzon+."
   basicMessage: 
-  mediumMessage: 
+  mediumMessage: "Televis\xE3o, assistir WestBrooklyn, estrelada por Eren Stark e
+    Arya Ackermann, exclusividade do Netzon+. Al\xE9m disso posso ter aulas de exerc\xEDcios
+    com o prof. Luke Dunphy!"
   expertMessage: 
   button1Text: "Assistir uma s\xE9rie"
   button1Req: 
@@ -2728,7 +2737,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590746503}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968377523}
@@ -3500,7 +3509,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319720608}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &602154954
 MonoBehaviour:
@@ -3766,7 +3775,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 672873146}
-  defaultMessage: 
+  defaultMessage: "Minha m\xE3e me deu estes livros, que ela acha que eu sou? George
+    R.R. Lucas? Haruki Tolkien? Bem, n\xE3o sou, mas acho que podem ser \xFAteis
+    as vezes, quem sabe o que os boomers que os escreveram n\xE3o esconderam ai dentro!"
   basicMessage: 
   mediumMessage: 
   expertMessage: 
@@ -4189,7 +4200,7 @@ PrefabInstance:
     - target: {fileID: 1753145921373100131, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 400
+      value: 480
       objectReference: {fileID: 0}
     - target: {fileID: 1753145921373100131, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
         type: 3}
@@ -4395,6 +4406,7 @@ MonoBehaviour:
   objectiveBasic: 0
   objectiveMedium: 0
   objectiveExpert: 0
+  gameWon: 0
 --- !u!224 &672873147 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1753145920307796023, guid: 8ae1c2e7ae492c2449e6cb001d7dbcda,
@@ -4762,7 +4774,7 @@ Transform:
   m_LocalScale: {x: 1.1, y: 1.1000001, z: 1.1000001}
   m_Children: []
   m_Father: {fileID: 209101978}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &916798735
 MonoBehaviour:
@@ -4839,7 +4851,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 672873146}
-  defaultMessage: 
+  defaultMessage: "Tchau, pregui\xE7a! Tchau, sujeira! Adeus cheirinho de suor! Lava,
+    lava, lava! Lava, lava, lava!"
   basicMessage: 
   mediumMessage: 
   expertMessage: 
@@ -4879,7 +4892,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319720608}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &921132507
 MonoBehaviour:
@@ -5276,7 +5289,7 @@ Transform:
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children: []
   m_Father: {fileID: 319720608}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!1 &1090921682
 GameObject:
@@ -5978,7 +5991,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 672873146}
-  defaultMessage: 
+  defaultMessage: "Minha m\xE3e me deu estes livros, que ela acha que eu sou? George
+    R.R. Lucas? Haruki Tolkien? Bem, n\xE3o sou, mas acho que podem ser \xFAteis
+    as vezes, quem sabe o que os boomers que os escreveram n\xE3o esconderam ai dentro!"
   basicMessage: 
   mediumMessage: 
   expertMessage: 
@@ -6118,7 +6133,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 209101978}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!212 &1531676088
 SpriteRenderer:
@@ -6195,7 +6210,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 672873146}
-  defaultMessage: 
+  defaultMessage: "Minha cama extremamente confort\xE1vel da marca Ortoflex, todos
+    os dias me sinto mais descansado por causa dela, uma pena que n\xE3o posso ficar
+    nela o dia todo..."
   basicMessage: 
   mediumMessage: 
   expertMessage: 
@@ -6518,7 +6535,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319720608}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &1664347985
 MonoBehaviour:
@@ -6613,7 +6630,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 209101978}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!212 &1704925754
 SpriteRenderer:
@@ -6690,10 +6707,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 672873146}
-  defaultMessage: 
+  defaultMessage: "Eu vejo um fog\xE3o eu penso em comida boa e saud\xE1vel, mas
+    n\xE3o fa\xE7o ideia de como cozinhar, uma pena. Talvez eu tente um dia!"
   basicMessage: 
   mediumMessage: 
-  expertMessage: 
+  expertMessage: "Hmmm , fog\xE3o \xE9 sin\xF4nimo de comida saud\xE1vel e gostosa,
+    acho que est\xE1 na hora de tentar cozinhar!"
   button1Text: "Preparar uma refei\xE7\xE3o"
   button1Req: Expert
   button2Text: 
@@ -6808,7 +6827,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 672873146}
-  defaultMessage: 
+  defaultMessage: "Minha m\xE3e me deu estes livros, que ela acha que eu sou? George
+    R.R. Lucas? Haruki Tolkien? Bem, n\xE3o sou, mas acho que podem ser \xFAteis
+    as vezes, quem sabe o que os boomers que os escreveram n\xE3o esconderam ai dentro!"
   basicMessage: 
   mediumMessage: 
   expertMessage: 
@@ -6860,7 +6881,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319720608}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &1736232173
 MonoBehaviour:
@@ -7927,7 +7948,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319720608}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!212 &1859510392
 SpriteRenderer:
@@ -8210,7 +8231,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 209101978}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!212 &1956400260
 SpriteRenderer:
@@ -8275,7 +8296,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 672873146}
-  defaultMessage: 
+  defaultMessage: Amo computadores, nele posso fazer tantas coisas, acho que hoje
+    estou com vontade de fazer algo...
   basicMessage: 
   mediumMessage: 
   expertMessage: 
@@ -8495,7 +8517,7 @@ Transform:
   m_LocalScale: {x: 1.6, y: 1.6000001, z: 1.5}
   m_Children: []
   m_Father: {fileID: 319720608}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!1 &2121402714
 GameObject:
@@ -8578,7 +8600,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 209101978}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &2121402717
 MonoBehaviour:

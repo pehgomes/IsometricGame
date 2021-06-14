@@ -17,6 +17,7 @@ public class DialogManager : MonoBehaviour
     public bool objectiveBasic = false;
     public bool objectiveMedium = false;
     public bool objectiveExpert = false;
+    public bool gameWon = false;
 
     string lastClicked = "";
 
@@ -59,24 +60,51 @@ public class DialogManager : MonoBehaviour
 	timeout = maxTimeout;
     }
 
+    void setMessage(string m)
+    {    
+	dialogBox.dialogText.text = m;
+
+	dialogBox.button1.gameObject.SetActive(false);
+	dialogBox.button2.gameObject.SetActive(false);
+	dialogBox.button3.gameObject.SetActive(false);
+
+	dialogBox.cancelButton.GetComponentInChildren<Text>().text = "Confirmar";
+	
+        dialogBox.anim.SetBool("IsOpen", true);
+    }
+
     void CheckObjectives()
     {
 	float[] values = hud.getAllBars();
 	if(values[0] == 0f && values[1] < 0.5f && values[2] < 0.5f && values[3] < 0.5f && values[4] < 0.5f){
             SceneManager.LoadScene(2);
 	}
-	else if(values[1] > 0.35f && values[4] > 0.35f && objectiveBasic == false)
+	else if(values[1] > 0.35f && values[4] > 0.35f 
+	&& objectiveBasic == false)
 	{
 	    objectiveBasic = true;
-	    dialogBox.dialogText.text = "Objetivo Básico!";
-
-	    dialogBox.button1.gameObject.SetActive(false);
-	    dialogBox.button2.gameObject.SetActive(false);
-	    dialogBox.button3.gameObject.SetActive(false);
-
-	    dialogBox.cancelButton.GetComponentInChildren<Text>().text = "Confirmar";
+	    setMessage("Objetivo Básico!");
 	
-            dialogBox.anim.SetBool("IsOpen", true);
+	}
+	else if(values[1] > 0.40f && values[3] > 0.40f 
+	&& objectiveBasic == true && objectiveMedium == false)
+	{
+	    objectiveMedium = true;
+	    setMessage("Objetivo Intermediário!");
+	
+	}
+	else if(values[1] > 0.55f && values[2] > 0.55f && values[3] > 0.55f
+	&& objectiveBasic == true && objectiveMedium == true && objectiveExpert == false)
+	{
+	    objectiveExpert = true;
+	    setMessage("Objetivo Experiente!");
+	
+	}
+	else if(values[2] > 0.80f && values[3] > 0.80f
+	&& objectiveBasic == true && objectiveMedium == true && objectiveExpert == true)
+	{
+	    gameWon = true;
+	    setMessage("Objetivo Saudável!");
 	
 	}
 	
@@ -84,30 +112,62 @@ public class DialogManager : MonoBehaviour
 
     void Click1()
     {
+	float energia = hud.energia.slider.value;
         switch (lastClicked)
         {
             case "bedSingle_SW":
 		fade();
-                hud.updateBars(0.04f, -0.15f, -0.15f, -0.15f, -0.15f);
+                hud.updateBars(0.40f, -0.15f, -0.15f, -0.15f, -0.15f);
                 break;
             case "shower_SE":
                 hud.updateBars(0.05f, 0.03f, 0.00f, 0.00f, 0.05f);
                 break;
             case "laptop_SW":
+		if(energia < 0.08f)
+		{
+		    setMessage("Energia insuficiente!");
+		    return;
+		}
                 hud.updateBars(-0.08f, -0.30f, 0.30f, 0.12f, 0.00f);
                 break;
             case "books_SE":
+		if(energia < 0.08f)
+		{
+		    setMessage("Energia insuficiente!");
+		    return;
+		}
+                hud.updateBars(-0.08f, 0.20f, 0.00f, 0.00f, 0.00f);
+                break;
+            case "books_NW":
+		if(energia < 0.08f)
+		{
+		    setMessage("Energia insuficiente!");
+		    return;
+		}
                 hud.updateBars(-0.08f, 0.20f, 0.00f, 0.00f, 0.00f);
                 break;
             case "kitchenFridge_SE":
                 hud.updateBars(0.05f, -0.12f, -0.04f, 0.00f, 0.03f);
                 break;
             case "televisionModern_NW":
-                hud.updateBars(-0.05f, -0.10f, 0.30f, -0.05f, 0.00f);
+		if(energia < 0.05f)
+		{
+		    setMessage("Energia insuficiente!");
+		    return;
+		}
+                hud.updateBars(-0.05f, -0.10f, 0.30f, 0.05f, 0.15f);
                 break;
             case "kitchenStove_NW":
-                hud.updateBars(0.01f, 0.05f, 0.00f, 0.05f, 0.00f);
+                hud.updateBars(0.10f, 0.10f, -0.10f, 0.00f, 0.25f);
                 break;
+	    case "Telefone":
+		if(energia < 0.02f)
+		{
+		    setMessage("Energia insuficiente!");
+		    return;
+		}
+                hud.updateBars(-0.02f, 0.00f, 0.00f, 0.05f, 0.00f);
+		break;
         }
 	
         dialogBox.anim.SetBool("IsOpen", false);
@@ -116,38 +176,72 @@ public class DialogManager : MonoBehaviour
 
     void Click2()
     {
+	float energia = hud.energia.slider.value;
         switch (lastClicked)
         {
             case "bedSingle_SW":
 		fade();
-                hud.updateBars(0.04f, -0.15f, -0.15f, -0.15f, -0.15f);
-                break;
-            case "shower_SE":
-                hud.updateBars(0.05f, 0.03f, 0.00f, 0.00f, 0.05f);
+                hud.updateBars(0.10f, -0.05f, -0.05f, -0.05f, -0.05f);
                 break;
             case "laptop_SW":
-                hud.updateBars(-1f, -1f, -1f, -1f, -1f);
+		if(energia < 0.10f)
+		{
+		    setMessage("Energia insuficiente!");
+		    return;
+		}
+                hud.updateBars(-0.10f, 0.10f, -0.20f, 0.00f, 0.00f);
                 break;
             case "books_SE":
-                hud.updateBars(-0.08f, 0.20f, 0.00f, 0.00f, 0.00f);
+		if(energia < 0.12f)
+		{
+		    setMessage("Energia insuficiente!");
+		    return;
+		}
+                hud.updateBars(-0.12f, 0.18f, -0.30f, 0.00f, 0.00f);
+                break;
+            case "books_NW":
+		if(energia < 0.12f)
+		{
+		    setMessage("Energia insuficiente!");
+		    return;
+		}
+                hud.updateBars(-0.12f, 0.18f, -0.30f, 0.00f, 0.00f);
                 break;
             case "kitchenFridge_SE":
-                hud.updateBars(0.05f, -0.12f, -0.04f, 0.00f, 0.03f);
+                hud.updateBars(0.07f, -0.08f, -0.04f, 0.00f, 0.06f);
                 break;
             case "televisionModern_NW":
-                hud.updateBars(-0.05f, -0.10f, 0.30f, -0.05f, 0.00f);
-                break;
-            case "kitchenStove_NW":
-                hud.updateBars(0.01f, 0.05f, 0.00f, 0.05f, 0.00f);
+                hud.updateBars(0.15f, 0.30f, 0.30f, 0.05f, 0.15f);
                 break;
         }
-
+	
         dialogBox.anim.SetBool("IsOpen", false);
 	CheckObjectives();
     }
 
     void Click3()
     {
+	float energia = hud.energia.slider.value;
+        switch (lastClicked)
+        {
+            case "laptop_SW":
+		if(energia < 0.04f)
+		{
+		    setMessage("Energia insuficiente!");
+		    return;
+		}
+                hud.updateBars(-0.04f, 0.03f, 0.05f, 0.20f, 0.00f);
+                break;
+            case "televisionModern_NW":
+		if(energia < 0.35f)
+		{
+		    setMessage("Energia insuficiente!");
+		    return;
+		}
+                hud.updateBars(-0.35f, -0.40f, -0.40f, -0.20f, 0.00f);
+                break;
+        }
+	
         dialogBox.anim.SetBool("IsOpen", false);
 	CheckObjectives();
     }
@@ -218,11 +312,7 @@ public class DialogManager : MonoBehaviour
 	    }
 	    else
 	    {
-	        dialogBox.dialogText.text = "Muito longe!";
-	        dialogBox.button1.gameObject.SetActive(false);
-	        dialogBox.button2.gameObject.SetActive(false);
-	        dialogBox.button3.gameObject.SetActive(false);
-	        dialogBox.cancelButton.GetComponentInChildren<Text>().text = "Ok";
+	        setMessage("Muito longe!");
 	    }
 
         dialogBox.anim.SetBool("IsOpen", true);
