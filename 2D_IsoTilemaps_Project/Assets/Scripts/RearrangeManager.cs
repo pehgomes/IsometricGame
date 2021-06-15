@@ -13,6 +13,9 @@ public class RearrangeManager : MonoBehaviour
     public GameObject portaFechada;
     public GameObject portaAberta;
 
+    public SpriteRenderer fadeBlack;
+    public Sprite fadeWhite;
+
     public void arrumarSala()
     {
 	salaDesarrumada.SetActive(false);
@@ -29,6 +32,11 @@ public class RearrangeManager : MonoBehaviour
     {
 	portaFechada.SetActive(false);
 	portaAberta.SetActive(true);
+    }
+
+    public void mudarFade()
+    {	
+        fadeBlack.sprite = fadeWhite;
     }
 
 }

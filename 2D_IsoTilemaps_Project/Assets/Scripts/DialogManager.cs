@@ -22,11 +22,12 @@ public class DialogManager : MonoBehaviour
 
     string lastClicked = "";
 
-    float maxTimeout = 200;
-    float timeout = 100;
+    float maxTimeout = 160;
+    float timeout = 80;
 
     bool[] changeAux = new[]{false, false};
     bool[] changeAux2 = new[]{false, false};
+    bool changeAux3 = false;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +51,7 @@ public class DialogManager : MonoBehaviour
 	    }
 
 	    Color tmp = fadein.color;
-	    if(timeout < 100)
+	    if(timeout < (maxTimeout/2))
 	    {
 		if(changeAux[0] && !changeAux[1])
 		{
@@ -62,11 +63,15 @@ public class DialogManager : MonoBehaviour
 		   changeAux2[1] = true; 
 		   rearrangeManager.abrirJanela();
 		}
-	    	tmp.a = timeout/100;
+		else if(changeAux3)
+		{
+		   SceneManager.LoadScene(3);
+		}
+	    	tmp.a = timeout/(maxTimeout/2);
 	    }
 	    else
 	    {
-	    	tmp.a = (100 -(timeout -100))/100;
+	    	tmp.a = ((maxTimeout/2) -(timeout -(maxTimeout/2)))/(maxTimeout/2);
 	    }
             fadein.color = tmp;
 
@@ -74,7 +79,7 @@ public class DialogManager : MonoBehaviour
         }
 	else if(!gameWon)
 	{
-            hud.updateBars(0.00f, 0.00f, 0.00f, 0.00f, -0.0001f);
+            hud.updateBars(0.00f, 0.00f, 0.00f, 0.00f, -0.00005f);
 	}
     }
 
@@ -213,11 +218,15 @@ public class DialogManager : MonoBehaviour
 		changeAux2[0] = true;
 		fade();
 		break;
+	    case "doorway_SE":		
+		rearrangeManager.abrirPorta();
+		break;
 	
         }
 	
         dialogBox.anim.SetBool("IsOpen", false);
 	CheckObjectives();
+	lastClicked = "";
     }
 
     void Click2()
@@ -273,6 +282,7 @@ public class DialogManager : MonoBehaviour
 	
         dialogBox.anim.SetBool("IsOpen", false);
 	CheckObjectives();
+	lastClicked = "";
     }
 
     void Click3()
@@ -281,13 +291,13 @@ public class DialogManager : MonoBehaviour
         switch (lastClicked)
         {
             case "laptop_SW":
-		if(energia < 0.04f)
+		if(energia < 0.15f)
 		{
 		    setMessage("Energia insuficiente!");
 		    return;
 		}
 		fade();
-                hud.updateBars(-0.04f, 0.03f, 0.05f, 0.20f, 0.00f);
+                hud.updateBars(-0.15f, 0.03f, -0.05f, 0.05f, 0.00f);
                 break;
             case "televisionModern_NW":
 		if(energia < 0.35f)
@@ -302,6 +312,7 @@ public class DialogManager : MonoBehaviour
 	
         dialogBox.anim.SetBool("IsOpen", false);
 	CheckObjectives();
+	lastClicked = "";
     }
 
     void ClickCancel()
@@ -320,20 +331,28 @@ public class DialogManager : MonoBehaviour
 	
 	    dialogBox.cancelButton.GetComponentInChildren<Text>().text = "Cancelar";	    
 
-	    if(gameWon)
+	    if(gameWon && !(obj.name == "doorway_SE"))
 	    {
-		if(obj.name == "doorway_SE")	
-		{    
-		    rearrangeManager.abrirPorta();
-		    return;
-		}
-		else if(obj.name == "doorway_SE (1)")
-		{
-            	    SceneManager.LoadScene(3);
+		if(obj.name == "doorway_SE (1)")
+		{			   
+		    rearrangeManager.mudarFade();
+		    hudVisibility.SetActive(false);
+            	    changeAux3 = true;
+		    timeout = 300;
 		    return;
 		}
 		else
 		    setMessage("Eu acho que está na hora de sair...");	
+
+	    }
+
+	    else if(gameWon && obj.name == "doorway_SE")
+	    {
+                lastClicked = obj.name;
+		
+		dialogBox.dialogText.text = "Não seguremos a porta, está na hora de sair!";
+	        dialogBox.button1.gameObject.SetActive(true);
+	        dialogBox.button1.GetComponentInChildren<Text>().text = "Abrir a porta";	
 
 	    }
 
