@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
@@ -11,10 +12,16 @@ public class HUD : MonoBehaviour
     public GenericBar socializacao;
     public GenericBar autocuidados;
 
+    public Text charName;
+    public Text level;
+
     // Start is called before the first frame update
     void Start()
     {
         this.updateBars(0.2f, 0.15f, 0.15f, 0.1f, 0.2f);
+
+	charName.text = StaticValues.charName;
+	level.text = "Lv. 1";
     }
 
     // Update is called once per frame
