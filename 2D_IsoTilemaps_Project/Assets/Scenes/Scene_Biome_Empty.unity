@@ -9149,7 +9149,7 @@ MonoBehaviour:
   button2Text: Estudar
   button2Req: Basic
   button3Text: Trabalhar
-  button3Req: Medium
+  button3Req: Expert
 --- !u!114 &1956400262
 MonoBehaviour:
   m_ObjectHideFlags: 0

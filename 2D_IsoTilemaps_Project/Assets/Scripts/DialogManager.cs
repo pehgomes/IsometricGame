@@ -133,7 +133,7 @@ public class DialogManager : MonoBehaviour
 	    hud.level.text = "Lv. 4";
 	
 	}
-	else if(values[2] > 0.80f && values[3] > 0.80f
+	else if(values[1] > 0.80f && values[2] > 0.60f && values[3] > 0.80f && values[4] > 0.60f 
 	&& objectiveBasic == true && objectiveMedium == true && objectiveExpert == true && gameWon == false)
 	{
 	    gameWon = true;
