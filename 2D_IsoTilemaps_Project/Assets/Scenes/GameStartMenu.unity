@@ -190,8 +190,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Artes:\r\nMateus \r\nThais \r\nDavi\r\n\r\nGameplay:\r\nAndreia F\xF3rmico\r\nPedro\r\nArtur\r\nThais\r\nDavi\r\nMateus\r\n\r\nHist\xF3ria:\r\nMateus\r\nDavi
-    Sisnando\r\nTha\xEDs"
+  m_Text: "Artes/Design:\r\nDavi Sisnando\nTha\xEDs\nMateus\n\r\nGameplay:\r\nAndreia
+    F\xF3rmico\nTha\xEDs\nMateus\r\nArtur\r\r\nDavi\r\r\r Sisnando\n\r\nHist\xF3ria:\r\nTha\xEDs\r\nMateus\r\nDavi
+    Sisnando"
 --- !u!222 &128232
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1446,8 +1447,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xC1udio:\r\nMateus Pal\xE1cio\r\nRomildo\n\nRevis\xE3o:\r\nAndreia F\xF3rmico\r\n\r\nManagers:\r\nTha\xEDs\r\nMateus
-    \r\n\r\nF\xEDsica:\r\nArtur\r\nPedro\n\nDire\xE7\xE3o:\r\nAndr\xE9ia F\xF3rmico"
+  m_Text: "\xC1udio:\r\nDavi Sisnando\nMateus\nRomildo\n\nRevis\xE3o:\r\nAndreia
+    F\xF3rmico\r\n\r\nManagers:\r\nMateus \r\r\nTha\xEDs\r\n\nDire\xE7\xE3o:\r\nAndr\xE9ia
+    F\xF3rmico"
 --- !u!222 &674360630
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3176,7 +3178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1586651665
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3190,8 +3192,9 @@ RectTransform:
   m_Children:
   - {fileID: 1911130563}
   - {fileID: 128230}
-  - {fileID: 2142883500}
+  - {fileID: 1957082317}
   - {fileID: 674360628}
+  - {fileID: 2142883500}
   m_Father: {fileID: 2128171460}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3290,7 +3293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1724876519
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3745,6 +3748,84 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1957082316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1957082317}
+  - component: {fileID: 1957082319}
+  - component: {fileID: 1957082318}
+  m_Layer: 5
+  m_Name: CreditsText (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1957082317
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957082316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1586651665}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 15, y: 24.1}
+  m_SizeDelta: {x: 359.67847, y: 416.28598}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1957082318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957082316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 21
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Desenvolvimento:\r\nArtur\nDavi Sisnando\nPedro\nTha\xEDs\n\rRomildo\n\r\nF\xEDsica:\r\nArtur\r\nPedro"
+--- !u!222 &1957082319
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957082316}
+  m_CullTransparentMesh: 0
 --- !u!1 &2032797876
 GameObject:
   m_ObjectHideFlags: 0
@@ -4103,11 +4184,11 @@ RectTransform:
   m_Children:
   - {fileID: 1145497968}
   m_Father: {fileID: 1586651665}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.055, y: -196.04}
+  m_AnchoredPosition: {x: 15.055, y: -219}
   m_SizeDelta: {x: 130.10983, y: 64.6021}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2142883501
