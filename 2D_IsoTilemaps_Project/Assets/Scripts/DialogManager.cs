@@ -105,7 +105,7 @@ public class DialogManager : MonoBehaviour
     void CheckObjectives()
     {
 	float[] values = hud.getAllBars();
-	if((values[0] == 0f && values[1] < 0.5f && values[2] < 0.5f && values[3] < 0.5f && values[4] < 0.5f) ||
+	if((values[0] <= 0.10f && values[1] < 0.35f && values[2] < 0.35f && values[3] < 0.35f && values[4] < 0.35f) ||
 	(values[1] < 0.10f && values[4] < 0.10f)){
             SceneManager.LoadScene(2);
 	}
@@ -151,7 +151,7 @@ public class DialogManager : MonoBehaviour
         {
             case "bedSingle_SW":
 		fade();
-                hud.updateBars(0.40f, -0.15f, -0.15f, -0.15f, -0.15f);
+                hud.updateBars(0.40f, -0.10f, -0.15f, -0.15f, 0.05f);
                 break;
             case "shower_SE":
 		fade();
